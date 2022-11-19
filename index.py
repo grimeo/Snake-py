@@ -12,12 +12,21 @@ FOOD_COLOR = "red"
 BACKGROUND_COLOR = "black"
 
 class Snake:
-    pass
-
+    def __init__(self):
+        self.body_size = BODY_PARTS
+        self.coordinates = []
+        self.squares = []
+         
+        for i in range(0, BODY_PARTS):
+            self.coordinates.append([0, 0])
+             
+        for x, y in self.coordinates:
+            square = canvas.create_rectangle (x, y, x + SPACE_SIZE, y + SPACE_SIZE, fill=SNAKE_COLOR, tags="snake")
+             
 class Food:
     def __init__(self):
-        x.random.randint(0, (GAME_WIDTH / SPACE_SIZE) * SPACE_SIZE )
-        y.random.randint(0, (GAME_HEIGHT / SPACE_SIZE) * SPACE_SIZE )
+        x = random.randint(0, (GAME_WIDTH / SPACE_SIZE) * SPACE_SIZE )
+        y = random.randint(0, (GAME_HEIGHT / SPACE_SIZE) * SPACE_SIZE )
         
         self.coordinates = [x, y]
         
